@@ -7,7 +7,11 @@ import { getOtp } from '../../services/authService';
 function AuthContainer() {
   const [step, setStep] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState('');
-  const { isPending: isSendingOtp, mutateAsync } = useMutation({
+  const {
+    isPending: isSendingOtp,
+    mutateAsync,
+    data: otpResponse,
+  } = useMutation({
     mutationFn: getOtp,
   });
   const sendOtpHandler = async (e) => {
@@ -38,6 +42,7 @@ function AuthContainer() {
             phoneNumber={phoneNumber}
             onBack={() => setStep((s) => s - 1)}
             onReSendOtp={sendOtpHandler}
+            otpResponse={otpResponse}
           />
         );
       default:
