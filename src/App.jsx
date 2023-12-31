@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import AppLayout from './ui/AppLayout';
 import Home from './pages/Home';
 import OwnerDashboard from './pages/OwnerDashboard';
+import Projects from './pages/Projects';
 
 const queryClient = new QueryClient();
 function App() {
@@ -17,8 +18,10 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/complete-profile" element={<CompleteProfile />} />
         <Route path="/owner" element={<AppLayout />}>
-          <Route index element={<Navigate to="dashboard " replace />} />
+          <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<OwnerDashboard />} />
+          <Route path="projects" element={<Projects />} />
+          {/* <Route path="projects/:id" element={<Project />} /> */}
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
