@@ -6,7 +6,7 @@ import { useMutation } from '@tanstack/react-query';
 import { getOtp } from '../../services/authService';
 function AuthContainer() {
   const [step, setStep] = useState(1);
-  const [phoneNumber, setPhoneNumber] = useState("09181111111");
+  const [phoneNumber, setPhoneNumber] = useState();
   const {
     isPending: isSendingOtp,
     mutateAsync,
