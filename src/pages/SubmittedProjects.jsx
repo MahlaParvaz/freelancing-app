@@ -1,9 +1,13 @@
-import React from 'react'
+import ProjectsHeader from '../features/freelancer/projects/ProjectsHeader';
+import ProjectsTabel from '../features/freelancer/projects/ProjectsTabel';
 
 function SubmittedProjects() {
   return (
-    <div>SubmittedProjects</div>
-  )
+    <div>
+      <ProjectsHeader />
+      <ProjectsTabel />
+    </div>
+  );
 }
 
-export default SubmittedProjects
+export default SubmittedProjects;
