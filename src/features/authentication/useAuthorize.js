@@ -3,7 +3,7 @@ import useUser from './useUser';
 
 export default function useAuthorize() {
   const { isLoading, user } = useUser();
-  const { pathname } = useLocation(); // => /owner/projects
+  const { pathname } = useLocation();
 
   let isAuthenticated = false;
   if (user) isAuthenticated = true;
@@ -18,7 +18,7 @@ export default function useAuthorize() {
     owner: 'OWNER',
   };
 
-  const desiredRole = pathname.split('/').at(1); // admin, freelancer, owner
+  const desiredRole = pathname.split('/').at(1);
 
   if (Object.keys(ROLES).includes(desiredRole)) {
     if (user && user.role === ROLES[desiredRole]) isAuthorized = true;
