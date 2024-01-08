@@ -1,7 +1,4 @@
 import Loading from '../../ui/Loading';
-import toLocalDateShort from '../../utils/toLocalDateShort';
-import { toPersianNumbersWithComma } from '../../utils/toPersianNumbersWithComma';
-import truncateText from '../../utils/truncateText';
 import useOwnerProjects from './useOwnerProjects.';
 import Empty from '../../ui/Empty';
 import Table from '../../ui/Table';
